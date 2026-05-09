@@ -3,8 +3,10 @@
 Maskify is a premium Chrome extension that automatically blurs sensitive messages during screen sharing and presentations. It features a modern glassmorphic UI and a FastAPI backend for configuration management.
 
 ## Features
-- **Automatic Blurring**: Targets WhatsApp, Slack, Discord, Microsoft Teams, and Google Meet.
+- **Automatic Blurring**: Specialized protection for WhatsApp Web and Telegram Web (K & Z versions).
 - **Hover to Reveal**: Quickly peek at a message by hovering your mouse over it.
+- **Keyboard Shortcut**: Press `Alt + Shift + M` to toggle blurring instantly.
+- **Presentation Mode**: Automatically enables protection when you join a meeting on Google Meet, Zoom, or Teams.
 - **Adjustable Intensity**: Customize the blur strength from the popup.
 - **Backend Sync**: Synchronize your preferences across devices via a FastAPI backend.
 - **Premium Design**: Sleek, modern interface with smooth animations.

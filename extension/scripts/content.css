@@ -15,35 +15,24 @@
 /* Specific platform selectors */
 
 /* WhatsApp Web */
-.message-in .copyable-text, 
-.message-out .copyable-text {
+div.message-in, 
+div.message-out,
+[data-testid="cell-frame-secondary"] {
     filter: var(--maskify-blur, blur(12px));
     transition: filter 0.3s ease;
 }
 
-/* Slack */
-.c-message__body {
+/* Telegram Web (K and Z) */
+.bubble-content,
+.chat-subtitle,
+.message-content,
+.last-msg,
+.text-content {
     filter: var(--maskify-blur, blur(12px));
     transition: filter 0.3s ease;
 }
 
-/* Discord */
-[class*="messageContent-"],
-[class*="lastMessage_"],
-[class*="subText_"] {
-    filter: var(--maskify-blur, blur(12px));
-    transition: filter 0.3s ease;
-}
-
-/* Sidebar Specifics */
-[data-testid="cell-frame-secondary"],
-.p-channel_sidebar__channel_preview,
-.p-channel_sidebar__last_message {
-    filter: var(--maskify-blur, blur(12px));
-    transition: filter 0.3s ease;
-}
-
-/* Hover to reveal logic implemented in JS or CSS */
+/* Hover to reveal logic */
 .maskify-reveal:hover {
     filter: blur(0px) !important;
 }

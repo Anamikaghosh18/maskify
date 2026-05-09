@@ -91,4 +91,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         apiStatus.textContent = 'Offline';
         apiStatus.className = 'error';
     }
+
+    // Listen for storage changes (for keyboard shortcuts)
+    chrome.storage.onChanged.addListener((changes, namespace) => {
+        if (namespace === 'local' && changes.maskifyConfig) {
+            const newConfig = changes.maskifyConfig.newValue;
+            globalToggle.checked = newConfig.is_active;
+            blurIntensity.value = newConfig.blur_strength;
+            hoverReveal.checked = newConfig.reveal_on_hover;
+            updateStatusBadge(newConfig.is_active);
+        }
+    });
 });

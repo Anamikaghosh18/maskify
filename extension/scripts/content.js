@@ -6,11 +6,20 @@ let config = {
 };
 
 const PLATFORM_SELECTORS = {
-    'web.whatsapp.com': ['.copyable-text', '.message-in', '.message-out', '[data-testid="cell-frame-secondary"]', '[data-testid="last-msg-meta"]'],
-    'app.slack.com': ['.c-message__body', '.c-message_kit__text', '.p-channel_sidebar__channel_preview', '.p-channel_sidebar__last_message'],
-    'discord.com': ['[class*="messageContent-"]', '[class*="contents-"]', '[class*="lastMessage_"]', '[class*="subText_"]'],
-    'teams.microsoft.com': ['.message-body-container', '.message-preview'],
-    'meet.google.com': ['[data-message-text]']
+    'web.whatsapp.com': [
+        'div.message-in', 
+        'div.message-out', 
+        '[data-testid="cell-frame-secondary"]', 
+        '[data-testid="last-msg-meta"]'
+    ],
+    'web.telegram.org': [
+        '.bubble-content',      // Version K messages
+        '.chat-subtitle',       // Version K previews
+        '.message-content',     // Version Z messages
+        '.last-msg',            // Version Z previews
+        '.text-content',        // Version Z text
+        '.reply-subtitle'       // Version K replies
+    ]
 };
 
 function getSelectorsForCurrentSite() {
@@ -24,12 +33,17 @@ function getSelectorsForCurrentSite() {
 function applyBlur() {
     if (!config.is_active) {
         removeBlur();
+        updateBadge(false);
         return;
     }
 
     const selectors = getSelectorsForCurrentSite();
-    if (selectors.length === 0) return;
+    if (selectors.length === 0) {
+        updateBadge(false);
+        return;
+    }
 
+    updateBadge(true);
     const styleId = 'maskify-dynamic-styles';
     let styleEl = document.getElementById(styleId);
     if (!styleEl) {
@@ -49,6 +63,39 @@ function applyBlur() {
     });
 
     styleEl.textContent = css;
+}
+
+function updateBadge(active) {
+    let badge = document.getElementById('maskify-status-badge');
+    if (!badge) {
+        badge = document.createElement('div');
+        badge.id = 'maskify-status-badge';
+        badge.innerHTML = '🎭 <span>Protected</span>';
+        Object.assign(badge.style, {
+            position: 'fixed',
+            bottom: '20px',
+            right: '20px',
+            backgroundColor: 'hsla(230, 80%, 15%, 0.8)',
+            color: 'white',
+            padding: '8px 12px',
+            borderRadius: '12px',
+            fontSize: '12px',
+            fontFamily: 'sans-serif',
+            zIndex: '999999',
+            backdropFilter: 'blur(8px)',
+            border: '1px solid hsla(0, 0%, 100%, 0.1)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            boxShadow: '0 4px 15px rgba(0,0,0,0.3)',
+            transition: 'opacity 0.3s ease, transform 0.3s ease',
+            pointerEvents: 'none'
+        });
+        document.body.appendChild(badge);
+    }
+    
+    badge.style.opacity = active ? '1' : '0';
+    badge.style.transform = active ? 'translateY(0)' : 'translateY(10px)';
 }
 
 function removeBlur() {
