@@ -1,43 +1,51 @@
-# Maskify - Privacy First Blurring 🎭
+# 🎭 Maskify - Privacy First Blurring
 
-Maskify is a premium Chrome extension that automatically blurs sensitive messages during screen sharing and presentations. It features a modern glassmorphic UI and a FastAPI backend for configuration management.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Anamikaghosh18/maskify/main/extension/icons/icon128.png" width="128" height="128" alt="Maskify Logo">
+</p>
 
-## Features
-- **Automatic Blurring**: Specialized protection for WhatsApp Web and Telegram Web (K & Z versions).
-- **Hover to Reveal**: Quickly peek at a message by hovering your mouse over it.
-- **Keyboard Shortcut**: Press `Alt + Shift + M` to toggle blurring instantly.
-- **Presentation Mode**: Automatically enables protection when you join a meeting on Google Meet, Zoom, or Teams.
-- **Adjustable Intensity**: Customize the blur strength from the popup.
-- **Backend Sync**: Synchronize your preferences across devices via a FastAPI backend.
-- **Premium Design**: Sleek, modern interface with smooth animations.
-
-## Getting Started
-
-### 1. Start the Backend
-Navigate to the `backend` directory and install dependencies:
-```bash
-cd backend
-pip install -r requirements.txt
-python main.py
-```
-The API will run on `http://localhost:8000`.
-
-### 2. Install the Chrome Extension
-1. Open Chrome and navigate to `chrome://extensions/`.
-2. Enable **Developer mode** (toggle in the top right corner).
-3. Click the **Load unpacked** button.
-4. **IMPORTANT**: Navigate to the `Maskify` folder and select the **`extension`** folder specifically. The `manifest.json` file must be directly inside the folder you select.
-
-### 3. Usage
-- Click the Maskify icon in your extensions toolbar.
-- Toggle "Global Blur" to enable/disable protection.
-- Adjust "Blur Intensity" to your preference.
-- Hover over any blurred message to reveal it temporarily.
-
-## Tech Stack
-- **Frontend**: Vanilla JS, HTML5, CSS3 (Glassmorphism).
-- **Backend**: FastAPI (Python).
-- **Design**: Outfit Font, HSL Color Palettes.
+<p align="center">
+  <img src="https://img.shields.io/badge/Platform-WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+  <img src="https://img.shields.io/badge/Platform-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" />
+  <img src="https://hits.dwyl.com/Anamikaghosh18/maskify.svg" />
+  <img src="https://img.shields.io/github/downloads/Anamikaghosh18/maskify/total?style=for-the-badge&color=orange&cacheBust=1" />
+</p>
 
 ---
-Built with ❤️ for Privacy.
+
+### 📦 [Download Latest Version](https://github.com/Anamikaghosh18/maskify/releases/download/ChromeExtension/maskify-extension.zip)
+*No server needed. Works instantly.*
+
+---
+
+### What is Maskify?
+Maskify is a sleek Chrome extension that automatically blurs your chat messages on **WhatsApp** and **Telegram**. Perfect for screen sharing, recording, or presenting.
+
+### ✨ Key Features
+- 🛡️ **Auto-Protection**: Instantly blurs messages on WhatsApp and Telegram.
+- 👁️ **Hover-to-Reveal**: Peek at a message by hovering your mouse over it.
+- ⌨️ **Quick Toggle**: Press **`Alt + Shift + M`** to toggle protection instantly.
+- 🤖 **Meeting Mode**: Automatically protects you on Google Meet or Zoom.
+
+---
+
+### 🛠️ Quick Start Guide (Easy Mode)
+**Zero setup required. No server needed.**
+
+1. **Download** the [Extension Zip](https://github.com/Anamikaghosh18/maskify/releases/download/ChromeExtension/maskify-extension.zip) and extract it.
+2. Open Chrome and go to `chrome://extensions/`.
+3. Turn on **Developer mode** (top right switch).
+4. Click **Load unpacked** and select the **`extension`** folder from the extracted files.
+5. **Done!** Open WhatsApp or Telegram and you're protected.
+
+---
+
+### ⚙️ Optional: Cloud Sync (Advanced)
+The `backend` folder is an **optional** FastAPI server for syncing settings across devices.
+1. `cd backend && pip install -r requirements.txt`
+2. `python main.py`
+3. Click **Sync with Backend** in the extension popup.
+
+---
+- 🔒 **Privacy**: [View Privacy Policy](./PRIVACY_POLICY.md)
+<p align="center">Built with ❤️ for a safer screen-sharing experience.</p>
