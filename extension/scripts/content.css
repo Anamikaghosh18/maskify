@@ -28,7 +28,17 @@
 }
 
 /* Discord */
-[class*="messageContent-"] {
+[class*="messageContent-"],
+[class*="lastMessage_"],
+[class*="subText_"] {
+    filter: var(--maskify-blur, blur(12px));
+    transition: filter 0.3s ease;
+}
+
+/* Sidebar Specifics */
+[data-testid="cell-frame-secondary"],
+.p-channel_sidebar__channel_preview,
+.p-channel_sidebar__last_message {
     filter: var(--maskify-blur, blur(12px));
     transition: filter 0.3s ease;
 }

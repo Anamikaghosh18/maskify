@@ -6,10 +6,10 @@ let config = {
 };
 
 const PLATFORM_SELECTORS = {
-    'web.whatsapp.com': ['.copyable-text', '.message-in', '.message-out'],
-    'app.slack.com': ['.c-message__body', '.c-message_kit__text'],
-    'discord.com': ['[class*="messageContent-"]', '[class*="contents-"]'],
-    'teams.microsoft.com': ['.message-body-container'],
+    'web.whatsapp.com': ['.copyable-text', '.message-in', '.message-out', '[data-testid="cell-frame-secondary"]', '[data-testid="last-msg-meta"]'],
+    'app.slack.com': ['.c-message__body', '.c-message_kit__text', '.p-channel_sidebar__channel_preview', '.p-channel_sidebar__last_message'],
+    'discord.com': ['[class*="messageContent-"]', '[class*="contents-"]', '[class*="lastMessage_"]', '[class*="subText_"]'],
+    'teams.microsoft.com': ['.message-body-container', '.message-preview'],
     'meet.google.com': ['[data-message-text]']
 };
 
