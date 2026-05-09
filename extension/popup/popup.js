@@ -43,19 +43,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         saveBtn.disabled = true;
         
         try {
+            // Check if backend is alive first
+            const health = await fetch('http://localhost:8000/').catch(() => null);
+            if (!health || !health.ok) throw new Error('Offline');
+
             const response = await chrome.runtime.sendMessage({ action: 'sync' });
             if (response) {
-                apiStatus.textContent = 'Connected';
+                apiStatus.textContent = 'Synced';
                 apiStatus.className = 'connected';
             } else {
-                throw new Error('No response');
+                throw new Error('Sync Failed');
             }
         } catch (e) {
-            apiStatus.textContent = 'Offline';
+            apiStatus.textContent = 'Offline (Local Only)';
             apiStatus.className = 'error';
+            console.log('Working in offline mode');
         } finally {
-            saveBtn.textContent = 'Sync with Backend';
-            saveBtn.disabled = false;
+            setTimeout(() => {
+                saveBtn.textContent = 'Sync with Backend';
+                saveBtn.disabled = false;
+            }, 1000);
         }
     });
 

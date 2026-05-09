@@ -9,8 +9,14 @@
     "activeTab"
   ],
   "host_permissions": [
-    "<all_urls>"
+    "*://web.whatsapp.com/*",
+    "*://web.telegram.org/*",
+    "*://webk.telegram.org/*",
+    "*://webz.telegram.org/*"
   ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": {
@@ -24,7 +30,12 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": [
+        "*://web.whatsapp.com/*",
+        "*://web.telegram.org/*",
+        "*://webk.telegram.org/*",
+        "*://webz.telegram.org/*"
+      ],
       "js": ["scripts/content.js"],
       "css": ["scripts/content.css"],
       "run_at": "document_idle"
