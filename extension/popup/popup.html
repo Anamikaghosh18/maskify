@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maskify - Privacy Control</title>
+    <link rel="stylesheet" href="popup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-area">
+                <div class="logo-icon"></div>
+                <h1>Maskify</h1>
+            </div>
+            <div class="status-badge" id="statusBadge">Active</div>
+        </header>
+
+        <main>
+            <div class="card glass">
+                <div class="control-row">
+                    <div class="info">
+                        <h3>Global Blur</h3>
+                        <p>Protect all sensitive messages</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="globalToggle" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="settings-group">
+                <div class="setting-item">
+                    <span>Blur Intensity</span>
+                    <input type="range" id="blurIntensity" min="2" max="25" value="12">
+                </div>
+                
+                <div class="setting-item">
+                    <span>Hover to Reveal</span>
+                    <label class="switch small">
+                        <input type="checkbox" id="hoverReveal" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="platforms">
+                <h4>Active Platforms</h4>
+                <div class="platform-chips">
+                    <span class="chip active">WhatsApp</span>
+                    <span class="chip active">Slack</span>
+                    <span class="chip active">Teams</span>
+                    <span class="chip">Discord</span>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <button id="saveSettings" class="btn-primary">Sync with Backend</button>
+            <p class="api-status">Backend: <span id="apiStatus" class="connecting">Checking...</span></p>
+        </footer>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

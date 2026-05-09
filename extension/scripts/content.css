@@ -1,0 +1,39 @@
+/* Maskify Blurring Classes */
+
+.maskify-blurred {
+    filter: blur(12px) !important;
+    transition: filter 0.3s ease !important;
+    user-select: none !important;
+    pointer-events: none !important;
+}
+
+.maskify-blurred:hover {
+    filter: blur(0px) !important;
+    pointer-events: auto !important;
+}
+
+/* Specific platform selectors */
+
+/* WhatsApp Web */
+.message-in .copyable-text, 
+.message-out .copyable-text {
+    filter: var(--maskify-blur, blur(12px));
+    transition: filter 0.3s ease;
+}
+
+/* Slack */
+.c-message__body {
+    filter: var(--maskify-blur, blur(12px));
+    transition: filter 0.3s ease;
+}
+
+/* Discord */
+[class*="messageContent-"] {
+    filter: var(--maskify-blur, blur(12px));
+    transition: filter 0.3s ease;
+}
+
+/* Hover to reveal logic implemented in JS or CSS */
+.maskify-reveal:hover {
+    filter: blur(0px) !important;
+}
