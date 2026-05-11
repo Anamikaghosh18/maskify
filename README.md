@@ -5,47 +5,32 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Platform-WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
-  <img src="https://img.shields.io/badge/Platform-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" />
-  <img src="https://hits.dwyl.com/Anamikaghosh18/maskify.svg" />
-  <img src="https://img.shields.io/github/downloads/Anamikaghosh18/maskify/total?style=for-the-badge&color=orange&cacheBust=1" />
+  <img src="https://img.shields.io/badge/Platform-WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp Support" />
+  <img src="https://img.shields.io/badge/Platform-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Support" />
+  <img src="https://img.shields.io/github/downloads/Anamikaghosh18/maskify/total?style=for-the-badge&color=orange" alt="Total Downloads" />
+  <a href="https://github.com/Anamikaghosh18/maskify/releases/download/ChromeExtension/maskify-extension.zip">
+    <img src="https://img.shields.io/badge/Download-Latest-8A2BE2?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Download Latest ZIP" />
+  </a>
 </p>
 
----
-
-### 📦 [Download Latest Version](https://github.com/Anamikaghosh18/maskify/releases/download/ChromeExtension/maskify-extension.zip)
-*No server needed. Works instantly.*
-
----
 
 ### What is Maskify?
-Maskify is a sleek Chrome extension that automatically blurs your chat messages on **WhatsApp** and **Telegram**. Perfect for screen sharing, recording, or presenting.
+Maskify is a sleek Chrome extension that automatically blurs your chat messages on **WhatsApp Web** and **Telegram Web**. Perfect for screen sharing, recording, or presenting.
 
 ### ✨ Key Features
-- 🛡️ **Auto-Protection**: Instantly blurs messages on WhatsApp and Telegram.
-- 👁️ **Hover-to-Reveal**: Peek at a message by hovering your mouse over it.
-- ⌨️ **Quick Toggle**: Press **`Alt + Shift + M`** to toggle protection instantly.
-- 🤖 **Meeting Mode**: Automatically protects you on Google Meet or Zoom.
+- **Auto-Protection**: Instantly blurs messages on WhatsApp Web and Telegram Web.
+- **Hover-to-Reveal**: Peek at a message by hovering your mouse over it.
+- **Quick Toggle**: Press **`Alt + Shift + M`** to toggle protection instantly.
+- **Meeting Mode**: Automatically protects you on Google Meet or Zoom.
 
----
-
-### 🛠️ Quick Start Guide (Easy Mode)
-**Zero setup required. No server needed.**
+### 🛠️ Quick Start Guide 
+**Minimal setup required. No server needed.**
 
 1. **Download** the [Extension Zip](https://github.com/Anamikaghosh18/maskify/releases/download/ChromeExtension/maskify-extension.zip) and extract it.
 2. Open Chrome and go to `chrome://extensions/`.
 3. Turn on **Developer mode** (top right switch).
-4. Click **Load unpacked** and select the **`extension`** folder from the extracted files.
-5. **Done!** Open WhatsApp or Telegram and you're protected.
+4. Click **Load unpacked** and select the extracted folder.
+5. **Done!** Open WhatsApp Web or Telegram Web.
 
 ---
-
-### ⚙️ Optional: Cloud Sync (Advanced)
-The `backend` folder is an **optional** FastAPI server for syncing settings across devices.
-1. `cd backend && pip install -r requirements.txt`
-2. `python main.py`
-3. Click **Sync with Backend** in the extension popup.
-
----
-- 🔒 **Privacy**: [View Privacy Policy](./PRIVACY_POLICY.md)
-<p align="center">Built with ❤️ for a safer screen-sharing experience.</p>
+<p align="center">Built with ❤️ by Anamika for a safer screen-sharing experience.</p>
