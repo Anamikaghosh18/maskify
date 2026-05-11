@@ -210,39 +210,13 @@ input[type="range"] {
 
 footer {
     margin-top: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid hsla(0, 0%, 100%, 0.05);
 }
 
-.btn-primary {
-    background: linear-gradient(90deg, var(--primary), #8b5cf6);
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 12px;
-    font-family: var(--font);
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 15px hsla(230, 80%, 60%, 0.3);
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px hsla(230, 80%, 60%, 0.4);
-}
-
-.api-status {
+.footer-note {
     font-size: 0.65rem;
     text-align: center;
     color: var(--text-dim);
-}
-
-#apiStatus.connected {
-    color: var(--success);
-}
-
-#apiStatus.error {
-    color: hsl(0, 80%, 60%);
+    font-style: italic;
 }

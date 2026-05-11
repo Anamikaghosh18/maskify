@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const globalToggle = document.getElementById('globalToggle');
     const blurIntensity = document.getElementById('blurIntensity');
     const hoverReveal = document.getElementById('hoverReveal');
-    const apiStatus = document.getElementById('apiStatus');
-    const saveBtn = document.getElementById('saveSettings');
     const statusBadge = document.getElementById('statusBadge');
 
     // Load saved settings
@@ -38,33 +36,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         saveAndNotify();
     });
 
-    saveBtn.addEventListener('click', async () => {
-        saveBtn.textContent = 'Syncing...';
-        saveBtn.disabled = true;
-        
-        try {
-            // Check if backend is alive first
-            const health = await fetch('http://localhost:8000/').catch(() => null);
-            if (!health || !health.ok) throw new Error('Offline');
 
-            const response = await chrome.runtime.sendMessage({ action: 'sync' });
-            if (response) {
-                apiStatus.textContent = 'Synced';
-                apiStatus.className = 'connected';
-            } else {
-                throw new Error('Sync Failed');
-            }
-        } catch (e) {
-            apiStatus.textContent = 'Offline (Local Only)';
-            apiStatus.className = 'error';
-            console.log('Working in offline mode');
-        } finally {
-            setTimeout(() => {
-                saveBtn.textContent = 'Sync with Backend';
-                saveBtn.disabled = false;
-            }, 1000);
-        }
-    });
 
     function updateStatusBadge(active) {
         statusBadge.textContent = active ? 'Active' : 'Inactive';
@@ -87,17 +59,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    // Check initial API status
-    try {
-        const res = await fetch('http://localhost:8000/');
-        if (res.ok) {
-            apiStatus.textContent = 'Connected';
-            apiStatus.className = 'connected';
-        }
-    } catch (e) {
-        apiStatus.textContent = 'Offline';
-        apiStatus.className = 'error';
-    }
+
 
     // Listen for storage changes (for keyboard shortcuts)
     chrome.storage.onChanged.addListener((changes, namespace) => {
